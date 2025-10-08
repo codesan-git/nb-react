@@ -1,0 +1,263 @@
+/* Neo Brutalism Base Styles */
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Neo Brutalism Colors - Light Mode */
+  --color-brutal-black: #000000;
+  --color-brutal-white: #ffffff;
+  --color-brutal-yellow: #ffed4e;
+  --color-brutal-pink: #ff6ec7;
+  --color-brutal-blue: #00d4ff;
+  --color-brutal-green: #00ff85;
+  --color-brutal-orange: #ff6b35;
+  --color-brutal-purple: #b967ff;
+  --color-brutal-red: #ff0055;
+
+  /* Shadcn Colors - Light Mode */
+  --color-background: 0 0% 100%;
+  --color-foreground: 0 0% 3.9%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 0 0% 3.9%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 0 0% 3.9%;
+  --color-primary: 0 0% 9%;
+  --color-primary-foreground: 0 0% 98%;
+  --color-secondary: 0 0% 96.1%;
+  --color-secondary-foreground: 0 0% 9%;
+  --color-muted: 0 0% 96.1%;
+  --color-muted-foreground: 0 0% 45.1%;
+  --color-accent: 0 0% 96.1%;
+  --color-accent-foreground: 0 0% 9%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 0 0% 98%;
+  --color-border: 0 0% 89.8%;
+  --color-input: 0 0% 89.8%;
+  --color-ring: 0 0% 3.9%;
+  --color-chart-1: 12 76% 61%;
+  --color-chart-2: 173 58% 39%;
+  --color-chart-3: 197 37% 24%;
+  --color-chart-4: 43 74% 66%;
+  --color-chart-5: 27 87% 67%;
+
+  /* Shadows - Thick & Offset */
+  --shadow-brutal-sm: 4px 4px 0px 0px var(--color-brutal-black);
+  --shadow-brutal-md: 6px 6px 0px 0px var(--color-brutal-black);
+  --shadow-brutal-lg: 8px 8px 0px 0px var(--color-brutal-black);
+  --shadow-brutal-xl: 12px 12px 0px 0px var(--color-brutal-black);
+
+  /* Border Radius */
+  --radius-brutal: 0px;
+  --radius-brutal-sm: 2px;
+  --radius-brutal-md: 4px;
+  --radius: 0.5rem;
+
+  /* Border Width - Thick & Bold */
+  --border-brutal: 3px;
+  --border-brutal-thick: 5px;
+  --border-brutal-extra: 8px;
+
+  /* Font Families */
+  --font-brutal-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --font-brutal-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-brutal-mono: ui-monospace, "Courier New", monospace;
+
+  /* Font Sizes - Bold Scale */
+  --font-size-brutal-xs: 0.75rem;
+  --font-size-brutal-sm: 0.875rem;
+  --font-size-brutal-base: 1rem;
+  --font-size-brutal-lg: 1.125rem;
+  --font-size-brutal-xl: 1.5rem;
+  --font-size-brutal-2xl: 2rem;
+  --font-size-brutal-3xl: 3rem;
+  --font-size-brutal-4xl: 4rem;
+
+  /* Spacing - Generous */
+  --spacing-brutal-tight: 0.5rem;
+  --spacing-brutal-normal: 1rem;
+  --spacing-brutal-loose: 1.5rem;
+  --spacing-brutal-spacious: 2rem;
+}
+
+/* Dark Mode Variables */
+.dark {
+  /* Neo Brutalism Colors - Dark Mode */
+  --color-brutal-black: #ffffff;
+  --color-brutal-white: #1a1a1a;
+
+  /* Shadcn Colors - Dark Mode */
+  --color-background: 0 0% 3.9%;
+  --color-foreground: 0 0% 98%;
+  --color-card: 0 0% 3.9%;
+  --color-card-foreground: 0 0% 98%;
+  --color-popover: 0 0% 3.9%;
+  --color-popover-foreground: 0 0% 98%;
+  --color-primary: 0 0% 98%;
+  --color-primary-foreground: 0 0% 9%;
+  --color-secondary: 0 0% 14.9%;
+  --color-secondary-foreground: 0 0% 98%;
+  --color-muted: 0 0% 14.9%;
+  --color-muted-foreground: 0 0% 63.9%;
+  --color-accent: 0 0% 14.9%;
+  --color-accent-foreground: 0 0% 98%;
+  --color-destructive: 0 62.8% 30.6%;
+  --color-destructive-foreground: 0 0% 98%;
+  --color-border: 0 0% 14.9%;
+  --color-input: 0 0% 14.9%;
+  --color-ring: 0 0% 83.1%;
+  --color-chart-1: 220 70% 50%;
+  --color-chart-2: 160 60% 45%;
+  --color-chart-3: 30 80% 55%;
+  --color-chart-4: 280 65% 60%;
+  --color-chart-5: 340 75% 55%;
+
+  /* Dark Mode Shadows */
+  --shadow-brutal-sm: 4px 4px 0px 0px var(--color-brutal-black);
+  --shadow-brutal-md: 6px 6px 0px 0px var(--color-brutal-black);
+  --shadow-brutal-lg: 8px 8px 0px 0px var(--color-brutal-black);
+  --shadow-brutal-xl: 12px 12px 0px 0px var(--color-brutal-black);
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .border-brutal {
+    border: var(--border-brutal) solid var(--color-brutal-black);
+  }
+
+  .border-brutal-thick {
+    border: var(--border-brutal-thick) solid var(--color-brutal-black);
+  }
+
+  .shadow-brutal {
+    box-shadow: var(--shadow-brutal-md);
+  }
+
+  .shadow-brutal-sm {
+    box-shadow: var(--shadow-brutal-sm);
+  }
+
+  .shadow-brutal-lg {
+    box-shadow: var(--shadow-brutal-lg);
+  }
+
+  .shadow-brutal-xl {
+    box-shadow: var(--shadow-brutal-xl);
+  }
+
+  .shadow-brutal-hover {
+    transition: all 0.2s ease;
+  }
+
+  .shadow-brutal-hover:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px 0px var(--color-brutal-black);
+  }
+
+  .bg-brutal-grid {
+    background-image:
+      linear-gradient(var(--color-brutal-black) 2px, transparent 2px),
+      linear-gradient(90deg, var(--color-brutal-black) 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-position: -2px -2px;
+  }
+
+  .text-brutal-stroke {
+    -webkit-text-stroke: 2px var(--color-brutal-black);
+    paint-order: stroke fill;
+  }
+
+  .skew-brutal {
+    transform: skew(-2deg);
+  }
+
+  .rotate-brutal {
+    transform: rotate(-1deg);
+  }
+}
+
+/* Custom Components */
+@layer components {
+  .btn-brutal {
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    border: var(--border-brutal) solid var(--color-brutal-black);
+    box-shadow: var(--shadow-brutal-md);
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .btn-brutal:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0px 0px var(--color-brutal-black);
+  }
+
+  .btn-brutal:active {
+    transform: translate(6px, 6px);
+    box-shadow: 0px 0px 0px 0px var(--color-brutal-black);
+  }
+
+  .card-brutal {
+    padding: 1.5rem;
+    background: hsl(var(--color-card));
+    color: hsl(var(--color-card-foreground));
+    border: var(--border-brutal) solid var(--color-brutal-black);
+    box-shadow: var(--shadow-brutal-lg);
+  }
+
+  .input-brutal {
+    padding: 0.75rem 1rem;
+    background: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    border: var(--border-brutal) solid var(--color-brutal-black);
+    font-weight: 600;
+    outline: none;
+  }
+
+  .input-brutal:focus {
+    box-shadow: var(--shadow-brutal-md);
+    border-color: var(--color-brutal-black);
+  }
+
+  .input-brutal::placeholder {
+    color: hsl(var(--color-muted-foreground));
+  }
+}
+
+/* Shadcn Base Styles */
+@layer base {
+  * {
+    border-color: hsl(var(--color-border));
+  }
+
+  body {
+    background-color: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+  }
+}
+
+/* Animations */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
